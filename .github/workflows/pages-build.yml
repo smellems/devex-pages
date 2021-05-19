@@ -2,7 +2,7 @@ name: Github Pages Build
 
 on:
   schedule:
-    - cron: "0 7 * * *"
+    - cron: "*/10 * * * *"
 
 jobs:
   build:
@@ -12,6 +12,6 @@ jobs:
       with:
           script: |
             github.rest.repos.requestPagesBuild({
-              "canada-ca",
-              "micro-acquisition"
+              "smellems",
+              "devex-pages"
             });
