@@ -11,8 +11,7 @@ jobs:
     - uses: actions/github-script@v4.0.2
       with:
           script: |
-            await github.request('POST /repos/{owner}/{repo}/pages/builds', {
-              owner: 'smellems',
-              repo: 'devex-pages'
-            })
-
+            github.repos.requestPagesBuild({
+              owner: "smellems",
+              repo: "devex-pages"
+            });
