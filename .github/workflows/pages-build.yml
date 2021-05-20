@@ -2,7 +2,7 @@ name: Github Pages Build
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/20 * * * *"
 
 jobs:
   build:
@@ -13,6 +13,6 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             github.repos.requestPagesBuild({
-              owner: "smellems",
-              repo: "devex-pages"
+              owner: context.repo.owner,
+              repo: context.repo.repo
             })
