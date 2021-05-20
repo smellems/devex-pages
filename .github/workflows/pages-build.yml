@@ -12,7 +12,7 @@ jobs:
       with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            github.repos.requestPagesBuild({
+            github.repos.updateInformationAboutPagesSite({
               owner: context.repo.owner,
               repo: context.repo.repo
             })
